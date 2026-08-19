@@ -23,7 +23,12 @@ public_url = os.environ.get("MLFLOW_TRACKING_URI", "file:./mlruns")
 mlflow.set_tracking_uri(public_url)
 mlflow.set_experiment("mlops-training-experiment")
 
-api = HfApi()
+hf_token = os.environ.get("HF_TOKEN_NEW")
+
+if not hf_token:
+    raise ValueError("HF_TOKEN_NEW is not set.")
+
+api = HfApi(token=hf_token)
 
 repo_id = "UshaNandhini2602/Predictive-Maintenance"
 
