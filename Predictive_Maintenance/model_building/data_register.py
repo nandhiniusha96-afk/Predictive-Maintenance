@@ -7,7 +7,7 @@ repo_id = "UshaNandhini2602/Predictive-Maintenance"
 repo_type = "dataset"
 
 # Initialize API client
-api = HfApi(token=os.getenv("HF_TOKEN"))
+api = HfApi(token=os.getenv("HF_TOKEN_NEW"))
 
 # Step 1: Check if the space exists
 try:
